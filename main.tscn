@@ -1,0 +1,121 @@
+[gd_scene load_steps=4 format=3 uid="uid://c2wojp21lixgj"]
+
+[ext_resource type="Script" uid="uid://b7s8vvy0bwp1b" path="res://node_2d.gd" id="1_0xm2m"]
+[ext_resource type="Texture2D" uid="uid://dvk8caj5l7lpt" path="res://pixilart-drawing(1).png" id="2_h2yge"]
+[ext_resource type="Texture2D" uid="uid://knpokuyes2mo" path="res://pixil-frame-0(3).png" id="3_1bvp3"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(524, 322)
+scale = Vector2(3, 3)
+script = ExtResource("1_0xm2m")
+degrade_speed = 5
+
+[node name="Cockpit" type="Sprite2D" parent="Node2D"]
+texture = ExtResource("2_h2yge")
+
+[node name="Wings" type="Sprite2D" parent="Node2D"]
+texture = ExtResource("3_1bvp3")
+
+[node name="Label" type="Label" parent="Node2D"]
+offset_left = -110.33334
+offset_top = -90.0
+offset_right = 33.666656
+offset_bottom = -67.0
+text = "r=000 g=000 b=000"
+
+[node name="Button_R" type="Button" parent="Node2D"]
+offset_left = 44.0
+offset_top = -63.0
+offset_right = 87.0
+offset_bottom = -32.0
+text = "Rojo
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="Button_G" type="Button" parent="Node2D"]
+offset_left = 45.0
+offset_top = -14.0
+offset_right = 99.0
+offset_bottom = 17.0
+text = "Verde"
+metadata/_edit_use_anchors_ = true
+
+[node name="Button_B" type="Button" parent="Node2D"]
+offset_left = 46.0
+offset_top = 34.0
+offset_right = 87.0
+offset_bottom = 65.0
+text = "Azul"
+metadata/_edit_use_anchors_ = true
+
+[node name="Button_C" type="Button" parent="Node2D"]
+offset_left = 113.0
+offset_top = -63.0
+offset_right = 160.0
+offset_bottom = -32.0
+text = "Cyan
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="Button_M" type="Button" parent="Node2D"]
+offset_left = 114.0
+offset_top = -14.0
+offset_right = 190.0
+offset_bottom = 17.0
+text = "Magenta"
+metadata/_edit_use_anchors_ = true
+
+[node name="Button_Y" type="Button" parent="Node2D"]
+offset_left = 115.0
+offset_top = 34.0
+offset_right = 189.0
+offset_bottom = 65.0
+text = "Amarillo"
+metadata/_edit_use_anchors_ = true
+
+[node name="Button_W" type="Button" parent="Node2D"]
+offset_left = -112.0
+offset_top = -41.0
+offset_right = -36.0
+offset_bottom = -10.0
+text = "Blanco"
+metadata/_edit_use_anchors_ = true
+
+[node name="Button_K" type="Button" parent="Node2D"]
+offset_left = -111.0
+offset_top = 7.0
+offset_right = -37.0
+offset_bottom = 38.0
+text = "Negro
+"
+metadata/_edit_use_anchors_ = true
+
+[node name="Button_STOP" type="Button" parent="Node2D"]
+offset_left = -49.666664
+offset_top = 54.0
+offset_right = 24.333336
+offset_bottom = 85.0
+text = "STOP"
+metadata/_edit_use_anchors_ = true
+
+[node name="Button_SHOOT" type="Button" parent="Node2D"]
+offset_left = -139.66666
+offset_top = 53.666668
+offset_right = -65.66666
+offset_bottom = 84.66667
+text = "SHOOT
+"
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="Node2D/Button_R" to="Node2D" method="_on_button_r_pressed"]
+[connection signal="pressed" from="Node2D/Button_G" to="Node2D" method="_on_button_g_pressed"]
+[connection signal="pressed" from="Node2D/Button_B" to="Node2D" method="_on_button_b_pressed"]
+[connection signal="pressed" from="Node2D/Button_C" to="Node2D" method="_on_button_c_pressed"]
+[connection signal="pressed" from="Node2D/Button_M" to="Node2D" method="_on_button_m_pressed"]
+[connection signal="pressed" from="Node2D/Button_Y" to="Node2D" method="_on_button_y_pressed"]
+[connection signal="pressed" from="Node2D/Button_W" to="Node2D" method="_on_button_w_pressed"]
+[connection signal="pressed" from="Node2D/Button_K" to="Node2D" method="_on_button_k_pressed"]
+[connection signal="pressed" from="Node2D/Button_STOP" to="Node2D" method="_on_button_stop_pressed"]
+[connection signal="pressed" from="Node2D/Button_SHOOT" to="Node2D" method="_on_button_shoot_pressed"]

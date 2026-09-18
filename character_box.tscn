@@ -1,0 +1,36 @@
+[gd_scene load_steps=7 format=3 uid="uid://c7gsvxjnpnwwr"]
+
+[ext_resource type="PackedScene" uid="uid://6ofmek7s3xxs" path="res://character_1.tscn" id="1_o2arb"]
+[ext_resource type="Texture2D" uid="uid://dvk8caj5l7lpt" path="res://pixilart-drawing(1).png" id="2_irwmc"]
+[ext_resource type="Texture2D" uid="uid://sblh1wlk1tq7" path="res://pixil-frame-0(4).png" id="3_grk8h"]
+[ext_resource type="Script" uid="uid://nyb750pskksx" path="res://sign_sprite.gd" id="4_u354p"]
+[ext_resource type="Texture2D" uid="uid://knpokuyes2mo" path="res://pixil-frame-0(3).png" id="5_n3dei"]
+[ext_resource type="Script" uid="uid://bos2gtdta6g41" path="res://light_sprite.gd" id="6_ojdsi"]
+
+[node name="CharacterBox" type="Node2D"]
+
+[node name="Character1" parent="." instance=ExtResource("1_o2arb")]
+
+[node name="HeadSpriteBox" type="Node2D" parent="."]
+scale = Vector2(2, 2)
+
+[node name="HeadSprite" type="Sprite2D" parent="HeadSpriteBox"]
+position = Vector2(0, -22)
+texture = ExtResource("2_irwmc")
+region_enabled = true
+region_rect = Rect2(16, 1, 24, 14)
+
+[node name="SignSprite" type="Sprite2D" parent="HeadSpriteBox/HeadSprite"]
+modulate = Color(0, 0, 0, 1)
+position = Vector2(0, -18)
+texture = ExtResource("3_grk8h")
+hframes = 3
+vframes = 3
+script = ExtResource("4_u354p")
+
+[node name="HeadLightSprite" type="Sprite2D" parent="HeadSpriteBox/HeadSprite"]
+modulate = Color(0, 0, 0, 1)
+texture = ExtResource("5_n3dei")
+region_enabled = true
+region_rect = Rect2(16, 1, 24, 14)
+script = ExtResource("6_ojdsi")

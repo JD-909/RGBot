@@ -1,0 +1,104 @@
+[gd_scene load_steps=4 format=3 uid="uid://bchatd67bmg8"]
+
+[ext_resource type="PackedScene" uid="uid://c7gsvxjnpnwwr" path="res://character_box.tscn" id="2_1nqq7"]
+[ext_resource type="PackedScene" uid="uid://cdieerfr462lm" path="res://lamp_area.tscn" id="2_vm3uh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jilme"]
+size = Vector2(1000, 50)
+
+[node name="TestGrounds" type="Node2D"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(576, 576)
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -500.0
+offset_top = -25.0
+offset_right = 500.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.40832946, 0.40832946, 0.40832946, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("RectangleShape2D_jilme")
+
+[node name="StaticBody2D2" type="StaticBody2D" parent="."]
+position = Vector2(-66, 312)
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D2"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -500.0
+offset_top = -25.0
+offset_right = 500.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.40832946, 0.40832946, 0.40832946, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D2"]
+shape = SubResource("RectangleShape2D_jilme")
+
+[node name="StaticBody2D3" type="StaticBody2D" parent="."]
+position = Vector2(1242, 317)
+
+[node name="ColorRect" type="ColorRect" parent="StaticBody2D3"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -500.0
+offset_top = -25.0
+offset_right = 500.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.40832946, 0.40832946, 0.40832946, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D3"]
+shape = SubResource("RectangleShape2D_jilme")
+
+[node name="LampArea" parent="." instance=ExtResource("2_vm3uh")]
+position = Vector2(285, 530)
+color_light = Color(1, 0, 0, 1)
+
+[node name="LampArea2" parent="." instance=ExtResource("2_vm3uh")]
+position = Vector2(593, 530)
+color_light = Color(0, 1, 0, 1)
+
+[node name="LampArea3" parent="." instance=ExtResource("2_vm3uh")]
+position = Vector2(918, 533)
+color_light = Color(0, 0, 1, 1)
+
+[node name="LampArea4" parent="." instance=ExtResource("2_vm3uh")]
+position = Vector2(181, 211)
+color_light = Color(1, 0, 0, 1)
+
+[node name="LampArea5" parent="." instance=ExtResource("2_vm3uh")]
+position = Vector2(218, 147)
+color_light = Color(0, 1, 0, 1)
+
+[node name="LampArea6" parent="." instance=ExtResource("2_vm3uh")]
+position = Vector2(255, 211)
+color_light = Color(0, 0, 1, 1)
+
+[node name="LampArea7" parent="." instance=ExtResource("2_vm3uh")]
+position = Vector2(1068, 105)
+color_light = Color(0, 0, 1, 1)
+
+[node name="LampArea8" parent="." instance=ExtResource("2_vm3uh")]
+position = Vector2(867, 113)
+color_light = Color(1, 0, 0, 1)
+
+[node name="CharacterBox" parent="." instance=ExtResource("2_1nqq7")]
+position = Vector2(594, 496)

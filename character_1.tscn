@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://6ofmek7s3xxs"]
+
+[ext_resource type="Script" uid="uid://nh4psug2ovil" path="res://character_1.gd" id="1_l82gq"]
+[ext_resource type="Texture2D" uid="uid://dvk8caj5l7lpt" path="res://pixilart-drawing(1).png" id="2_pw62m"]
+[ext_resource type="Texture2D" uid="uid://knpokuyes2mo" path="res://pixil-frame-0(3).png" id="3_jb520"]
+[ext_resource type="Script" uid="uid://bos2gtdta6g41" path="res://light_sprite.gd" id="4_pw62m"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ny28x"]
+radius = 15.0
+height = 60.0
+
+[node name="Character1" type="CharacterBody2D"]
+scale = Vector2(2, 2)
+collision_layer = 3
+script = ExtResource("1_l82gq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CapsuleShape2D_ny28x")
+
+[node name="Sprites" type="Node2D" parent="."]
+
+[node name="BodySprite" type="Sprite2D" parent="Sprites"]
+texture = ExtResource("2_pw62m")
+region_enabled = true
+region_rect = Rect2(21, 16, 24, 24)
+
+[node name="BodyLightSprite" type="Sprite2D" parent="Sprites/BodySprite"]
+modulate = Color(0, 0, 0, 1)
+texture = ExtResource("3_jb520")
+region_enabled = true
+region_rect = Rect2(21, 16, 24, 24)
+script = ExtResource("4_pw62m")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position_smoothing_enabled = true
