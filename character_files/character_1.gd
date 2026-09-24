@@ -1,6 +1,7 @@
 extends CharacterBody2D
 
 const GRAVITY : float = 20
+const HEAD_FOLLOW_MAX_SPEED : float = 20.0
 
 var speed : float = 500
 var break_speed : float = 50
@@ -24,9 +25,12 @@ func _physics_process(delta: float) -> void:
 	
 	if Input.is_action_just_pressed("special_key"):
 		head_fixed = !head_fixed
+		head_follow_speed = 0
 	
 	# Hacer que la cabeza se mueva despues del cuerpo
 	if !head_fixed:
+		if head_follow_speed < HEAD_FOLLOW_MAX_SPEED:
+			head_follow_speed += 0.5
 		HeadSprite.global_position = HeadSprite.global_position.lerp($".".global_position + Vector2(0, -45), delta * head_follow_speed)
 	
 	# direction tiene las teclas de direccion
