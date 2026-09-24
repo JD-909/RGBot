@@ -16,6 +16,10 @@ var head_fixed = false
 @onready var SignSprite = $"../HeadSpriteBox/HeadSprite/SignSprite"
 @onready var HeadSpriteBox = $"../HeadSpriteBox"
 
+func _ready() -> void:
+	$"../MultiTargetCam".add_target($".")
+	$"../MultiTargetCam".add_target($"../HeadSpriteBox/HeadSprite/LaserPoint")
+
 func _physics_process(delta: float) -> void:
 	
 	if Input.is_action_just_pressed("special_key"):

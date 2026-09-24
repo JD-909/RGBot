@@ -30,6 +30,3 @@ texture = ExtResource("3_jb520")
 region_enabled = true
 region_rect = Rect2(21, 16, 24, 24)
 script = ExtResource("4_pw62m")
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position_smoothing_enabled = true
