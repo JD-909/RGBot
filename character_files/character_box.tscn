@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://c7gsvxjnpnwwr"]
+[gd_scene load_steps=5 format=3 uid="uid://c7gsvxjnpnwwr"]
 
 [ext_resource type="PackedScene" uid="uid://6ofmek7s3xxs" path="res://character_files/character_1.tscn" id="1_o2arb"]
 [ext_resource type="PackedScene" uid="uid://bwbj22k6obmd3" path="res://character_files/head_sprite.tscn" id="2_3rm4u"]
+[ext_resource type="Texture2D" uid="uid://cdwsis50v740f" path="res://sprites/pixil-frame-0(1).png" id="4_evuk4"]
 [ext_resource type="Script" uid="uid://phrd3vkmk0ol" path="res://character_files/multi_target_camera.gd" id="7_jbfbp"]
 
 [node name="CharacterBox" type="Node2D"]
@@ -17,3 +18,18 @@ position = Vector2(0, -22)
 [node name="MultiTargetCam" type="Camera2D" parent="."]
 position_smoothing_enabled = true
 script = ExtResource("7_jbfbp")
+
+[node name="HandSprites" type="Node2D" parent="."]
+scale = Vector2(2, 2)
+
+[node name="HandSprite1" type="Sprite2D" parent="HandSprites"]
+position = Vector2(-15, 0)
+texture = ExtResource("4_evuk4")
+region_enabled = true
+region_rect = Rect2(9.828293, 25.547367, 11.510963, 13.129688)
+
+[node name="HandSprite2" type="Sprite2D" parent="HandSprites"]
+position = Vector2(15, 0)
+texture = ExtResource("4_evuk4")
+region_enabled = true
+region_rect = Rect2(9.828293, 25.547367, 11.510963, 13.129688)

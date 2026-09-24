@@ -8,14 +8,17 @@ var break_speed : float = 50
 var jump_force : float = -800
 var head_follow_speed : float = 20.0
 var head_rotation_speed : float = 0.3
+var hand_follow_speed : float = 20.0
 var head_fixed = false
 
-@onready var BodySprite = $Sprites/BodySprite
-@onready var BodyLightSprite = $Sprites/BodySprite/BodyLightSprite
+@onready var BodySprite = $BodySprites/BodySprite
+@onready var BodyLightSprite = $BodySprites/BodySprite/BodyLightSprite
 @onready var HeadSprite = $"../HeadSpriteBox/HeadSprite"
 @onready var HeadLightSprite = $"../HeadSpriteBox/HeadSprite/HeadLightSprite"
 @onready var SignSprite = $"../HeadSpriteBox/HeadSprite/SignSprite"
 @onready var HeadSpriteBox = $"../HeadSpriteBox"
+@onready var LeftHand = $"../HandSprites/HandSprite1"
+@onready var RightHand = $"../HandSprites/HandSprite2"
 
 func _ready() -> void:
 	$"../MultiTargetCam".add_target($".")
@@ -32,6 +35,7 @@ func _physics_process(delta: float) -> void:
 		if head_follow_speed < HEAD_FOLLOW_MAX_SPEED:
 			head_follow_speed += 0.5
 		HeadSprite.global_position = HeadSprite.global_position.lerp($".".global_position + Vector2(0, -45), delta * head_follow_speed)
+	
 	
 	# direction tiene las teclas de direccion
 	var direction : float = Input.get_axis("left_key", "right_key")
@@ -96,6 +100,11 @@ func _physics_process(delta: float) -> void:
 	
 	# No olvidarse de move and slide
 	move_and_slide()
+	
+	LeftHand.global_position.y = LeftHand.global_position.lerp($".".global_position + Vector2(-15,0), delta * hand_follow_speed).y
+	RightHand.global_position.y = RightHand.global_position.lerp($".".global_position + Vector2(15,0), delta * hand_follow_speed).y
+	LeftHand.global_position.x = BodySprite.global_position.x - 30
+	RightHand.global_position.x = BodySprite.global_position.x + 30
 
 
 func add_color(color : Color) -> void:
