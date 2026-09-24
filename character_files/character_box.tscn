@@ -1,11 +1,11 @@
 [gd_scene load_steps=7 format=3 uid="uid://c7gsvxjnpnwwr"]
 
-[ext_resource type="PackedScene" uid="uid://6ofmek7s3xxs" path="res://character_1.tscn" id="1_o2arb"]
-[ext_resource type="Texture2D" uid="uid://dvk8caj5l7lpt" path="res://pixilart-drawing(1).png" id="2_irwmc"]
-[ext_resource type="Texture2D" uid="uid://sblh1wlk1tq7" path="res://pixil-frame-0(4).png" id="3_grk8h"]
-[ext_resource type="Script" uid="uid://nyb750pskksx" path="res://sign_sprite.gd" id="4_u354p"]
-[ext_resource type="Texture2D" uid="uid://knpokuyes2mo" path="res://pixil-frame-0(3).png" id="5_n3dei"]
-[ext_resource type="Script" uid="uid://bos2gtdta6g41" path="res://light_sprite.gd" id="6_ojdsi"]
+[ext_resource type="PackedScene" uid="uid://6ofmek7s3xxs" path="res://character_files/character_1.tscn" id="1_o2arb"]
+[ext_resource type="Texture2D" uid="uid://dvk8caj5l7lpt" path="res://sprites/pixilart-drawing(1).png" id="2_irwmc"]
+[ext_resource type="Texture2D" uid="uid://sblh1wlk1tq7" path="res://sprites/pixil-frame-0(4).png" id="3_grk8h"]
+[ext_resource type="Script" uid="uid://nyb750pskksx" path="res://character_files/sign_sprite.gd" id="4_u354p"]
+[ext_resource type="Texture2D" uid="uid://knpokuyes2mo" path="res://sprites/pixil-frame-0(3).png" id="5_n3dei"]
+[ext_resource type="Script" uid="uid://bos2gtdta6g41" path="res://character_files/light_sprite.gd" id="6_ojdsi"]
 
 [node name="CharacterBox" type="Node2D"]
 

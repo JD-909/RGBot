@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bchatd67bmg8"]
 
-[ext_resource type="PackedScene" uid="uid://c7gsvxjnpnwwr" path="res://character_box.tscn" id="2_1nqq7"]
-[ext_resource type="PackedScene" uid="uid://cdieerfr462lm" path="res://lamp_area.tscn" id="2_vm3uh"]
+[ext_resource type="PackedScene" uid="uid://c7gsvxjnpnwwr" path="res://character_files/character_box.tscn" id="2_1nqq7"]
+[ext_resource type="PackedScene" uid="uid://cdieerfr462lm" path="res://level_objects/lamp_area.tscn" id="2_vm3uh"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jilme"]
 size = Vector2(1000, 50)

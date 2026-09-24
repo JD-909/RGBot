@@ -5,8 +5,9 @@ const GRAVITY : float = 20
 var speed : float = 500
 var break_speed : float = 50
 var jump_force : float = -800
-var head_follow_speed : float = 30.0
+var head_follow_speed : float = 20.0
 var head_rotation_speed : float = 0.3
+var head_fixed = false
 
 @onready var BodySprite = $Sprites/BodySprite
 @onready var BodyLightSprite = $Sprites/BodySprite/BodyLightSprite
@@ -17,8 +18,12 @@ var head_rotation_speed : float = 0.3
 
 func _physics_process(delta: float) -> void:
 	
+	if Input.is_action_just_pressed("special_key"):
+		head_fixed = !head_fixed
+	
 	# Hacer que la cabeza se mueva despues del cuerpo
-	HeadSprite.global_position = HeadSprite.global_position.lerp($".".global_position + Vector2(0, -45), delta * head_follow_speed)
+	if !head_fixed:
+		HeadSprite.global_position = HeadSprite.global_position.lerp($".".global_position + Vector2(0, -45), delta * head_follow_speed)
 	
 	# direction tiene las teclas de direccion
 	var direction : float = Input.get_axis("left_key", "right_key")

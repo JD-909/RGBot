@@ -1,9 +1,9 @@
 [gd_scene load_steps=6 format=3 uid="uid://6ofmek7s3xxs"]
 
-[ext_resource type="Script" uid="uid://nh4psug2ovil" path="res://character_1.gd" id="1_l82gq"]
-[ext_resource type="Texture2D" uid="uid://dvk8caj5l7lpt" path="res://pixilart-drawing(1).png" id="2_pw62m"]
-[ext_resource type="Texture2D" uid="uid://knpokuyes2mo" path="res://pixil-frame-0(3).png" id="3_jb520"]
-[ext_resource type="Script" uid="uid://bos2gtdta6g41" path="res://light_sprite.gd" id="4_pw62m"]
+[ext_resource type="Script" uid="uid://nh4psug2ovil" path="res://character_files/character_1.gd" id="1_l82gq"]
+[ext_resource type="Texture2D" uid="uid://dvk8caj5l7lpt" path="res://sprites/pixilart-drawing(1).png" id="2_pw62m"]
+[ext_resource type="Texture2D" uid="uid://knpokuyes2mo" path="res://sprites/pixil-frame-0(3).png" id="3_jb520"]
+[ext_resource type="Script" uid="uid://bos2gtdta6g41" path="res://character_files/light_sprite.gd" id="4_pw62m"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_ny28x"]
 radius = 15.0
