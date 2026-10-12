@@ -1,10 +1,15 @@
-[gd_scene load_steps=6 format=3 uid="uid://bwbj22k6obmd3"]
+[gd_scene load_steps=9 format=3 uid="uid://bwbj22k6obmd3"]
 
 [ext_resource type="Texture2D" uid="uid://cdwsis50v740f" path="res://sprites/pixil-frame-0(1).png" id="1_4hxj2"]
 [ext_resource type="Texture2D" uid="uid://sblh1wlk1tq7" path="res://sprites/pixil-frame-0(4).png" id="2_s2bby"]
 [ext_resource type="Script" uid="uid://nyb750pskksx" path="res://character_files/sign_sprite.gd" id="3_qepwk"]
 [ext_resource type="Texture2D" uid="uid://knpokuyes2mo" path="res://sprites/pixil-frame-0(3).png" id="4_wfblg"]
 [ext_resource type="Script" uid="uid://bos2gtdta6g41" path="res://character_files/light_sprite.gd" id="5_2g8qg"]
+[ext_resource type="Script" uid="uid://cqbdo8bpgv80g" path="res://character_files/ray_cast_2d.gd" id="6_s2bby"]
+[ext_resource type="Script" uid="uid://0bc5qrjvg4ci" path="res://character_files/laser_line.gd" id="7_qepwk"]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_qepwk"]
+b = Vector2(72, 0)
 
 [node name="HeadSprite" type="Sprite2D"]
 texture = ExtResource("1_4hxj2")
@@ -28,3 +33,24 @@ script = ExtResource("5_2g8qg")
 
 [node name="LaserPoint" type="Node2D" parent="."]
 position = Vector2(96, 0)
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+position = Vector2(8, 0)
+target_position = Vector2(1440, 0)
+script = ExtResource("6_s2bby")
+
+[node name="LaserLine" type="Line2D" parent="RayCast2D"]
+modulate = Color(0, 0, 0, 0)
+position = Vector2(-16, 0)
+points = PackedVector2Array(16, 0, 136, 0)
+width = 5.0
+begin_cap_mode = 2
+end_cap_mode = 2
+script = ExtResource("7_qepwk")
+
+[node name="Area2D" type="Area2D" parent="RayCast2D/LaserLine"]
+position = Vector2(16, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RayCast2D/LaserLine/Area2D"]
+shape = SubResource("SegmentShape2D_qepwk")
+debug_color = Color(0, 0, 0, 1)

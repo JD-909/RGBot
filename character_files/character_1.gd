@@ -19,10 +19,14 @@ var head_fixed = false
 @onready var HeadSpriteBox = $"../HeadSpriteBox"
 @onready var LeftHand = $"../HandSprites/HandSprite1"
 @onready var RightHand = $"../HandSprites/HandSprite2"
+@onready var LaserLight = $"../HeadSpriteBox/HeadSprite/RayCast2D/LaserLine"
+@onready var Laser = $"../HeadSpriteBox/HeadSprite/RayCast2D"
+
 
 func _ready() -> void:
 	$"../MultiTargetCam".add_target($".")
 	$"../MultiTargetCam".add_target($"../HeadSpriteBox/HeadSprite/LaserPoint")
+	toggle_laser()
 
 func _physics_process(delta: float) -> void:
 	
@@ -89,7 +93,9 @@ func _physics_process(delta: float) -> void:
 		# Si no, busca volver a 0. a quedarse quieto. Smooth
 		velocity.x = velocity.move_toward(Vector2.ZERO, break_speed).x
 	
-	
+	# Laser controls handler
+	if Input.is_action_just_pressed("laser_key"):
+		toggle_laser()
 	
 	# Salto handler
 	if is_on_floor() and Input.is_action_just_pressed("jump_key"):
@@ -111,9 +117,14 @@ func add_color(color : Color) -> void:
 	BodyLightSprite.add_color(color)
 	HeadLightSprite.add_color(color)
 	SignSprite.add_color(color)
+	LaserLight.add_color(color)
 	
 
 func subtract_color(color : Color) -> void:
 	BodyLightSprite.subtract_color(color)
 	HeadLightSprite.subtract_color(color)
 	SignSprite.subtract_color(color)
+	LaserLight.subtract_color(color)
+
+func toggle_laser() -> void:
+	Laser.toggle()

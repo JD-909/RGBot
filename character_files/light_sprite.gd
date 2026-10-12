@@ -35,12 +35,7 @@ func _physics_process(_delta: float) -> void:
 
 
 func add_color(color : Color) -> void:
-	#var new_color = Color8(0,0,0,255)
-	#
-	#for color_i in colors_on_me:
-		#new_color += color_i
-	#
-	#to_color = new_color
+	
 	colors_on_me.append(color)
 	to_color += color
 	reached_color = false

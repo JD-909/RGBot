@@ -11,7 +11,7 @@ height = 60.0
 
 [node name="Character1" type="CharacterBody2D"]
 scale = Vector2(2, 2)
-collision_layer = 3
+collision_layer = 2
 script = ExtResource("1_l82gq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
